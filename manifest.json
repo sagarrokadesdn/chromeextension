@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "Test Extension",
+  "version": "1.0.0",
+  "permissions": [ "tabs", "activeTab" ],
+  "content_scripts": [
+   { "matches": ["http://www.ciotocio.com/document-library"],
+    "js": ["client/user.js","client/download.js"]
+   }
+  ],
+
+  "browser_action": {
+    "default_title": "Open Popup!",
+    "default_popup": "index.html#/popup"
+  },
+  "icons": {
+    "19": "assets/icons/icon-72x72.png",
+    "38": "assets/icons/icon-96x96.png"
+  },
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+  }
